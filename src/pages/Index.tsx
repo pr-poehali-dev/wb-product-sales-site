@@ -4,20 +4,35 @@ import Icon from "@/components/ui/icon";
 const HERO_IMG = "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/97d1235e-20e3-403f-b7d3-c40dcd2b4077.jpg";
 const DELIVERY_IMG = "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/4b8c74b3-1bd5-476a-bb65-35264edc9380.jpg";
 
+const wbImg = (id: number) =>
+  `https://basket-${String(Math.floor(id / 1000000) + 1).padStart(2, "0")}.wbbasket.ru/vol${Math.floor(id / 100000)}/part${Math.floor(id / 1000)}/${id}/images/big/1.webp`;
+
 const products = [
-  { id: 1, name: "Умный браслет FitPro X7", price: 2490, oldPrice: 3990, category: "Гаджеты", rating: 4.8, reviews: 312, badge: "ХИТ", img: "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/70989c21-7dc4-4df8-9c89-5326eb992ee4.jpg" },
-  { id: 2, name: "Беспроводные наушники AirPod Pro", price: 1890, oldPrice: 2990, category: "Гаджеты", rating: 4.7, reviews: 204, badge: "СКИДКА", img: "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/70989c21-7dc4-4df8-9c89-5326eb992ee4.jpg" },
-  { id: 3, name: "Портативная колонка SoundBoom", price: 3490, oldPrice: null, category: "Гаджеты", rating: 4.9, reviews: 89, badge: "НОВИНКА", img: "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/70989c21-7dc4-4df8-9c89-5326eb992ee4.jpg" },
-  { id: 4, name: "Магнитный держатель для телефона", price: 590, oldPrice: 990, category: "Аксессуары", rating: 4.6, reviews: 541, badge: "СКИДКА", img: "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/70989c21-7dc4-4df8-9c89-5326eb992ee4.jpg" },
-  { id: 5, name: "Силиконовый чехол Premium", price: 490, oldPrice: null, category: "Аксессуары", rating: 4.5, reviews: 178, badge: null, img: "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/70989c21-7dc4-4df8-9c89-5326eb992ee4.jpg" },
-  { id: 6, name: "LED Лента с пультом 5м", price: 890, oldPrice: 1490, category: "Освещение", rating: 4.8, reviews: 633, badge: "ХИТ", img: "https://cdn.poehali.dev/projects/2a16e15c-8fa7-4756-9a73-6b11d5acf5cd/files/70989c21-7dc4-4df8-9c89-5326eb992ee4.jpg" },
+  { id: 228914431, name: "Юбка мини кожаная", price: 2490, oldPrice: 3200, category: "Юбки", rating: 4.8, reviews: 214, badge: "ХИТ", img: wbImg(228914431) },
+  { id: 158452496, name: "Юбка мини кожаная", price: 2290, oldPrice: null, category: "Юбки", rating: 4.7, reviews: 189, badge: null, img: wbImg(158452496) },
+  { id: 194941451, name: "Юбка мини плотная экокожа", price: 2390, oldPrice: 2990, category: "Юбки", rating: 4.9, reviews: 97, badge: "СКИДКА", img: wbImg(194941451) },
+  { id: 146857154, name: "Юбка со складками короткая пышная неопрен", price: 2790, oldPrice: null, category: "Юбки", rating: 4.8, reviews: 143, badge: "НОВИНКА", img: wbImg(146857154) },
+  { id: 169800008, name: "Юбка со складками короткая пышная замша", price: 2890, oldPrice: 3490, category: "Юбки", rating: 4.7, reviews: 76, badge: "СКИДКА", img: wbImg(169800008) },
+  { id: 154713837, name: "Юбка шорты завышенная", price: 2190, oldPrice: null, category: "Юбки", rating: 4.6, reviews: 112, badge: null, img: wbImg(154713837) },
+  { id: 219140447, name: "Куртка укороченная весна-лето плотная экокожа", price: 4990, oldPrice: 6200, category: "Куртки", rating: 4.9, reviews: 321, badge: "ХИТ", img: wbImg(219140447) },
+  { id: 146872595, name: "Куртка укороченная весна-лето", price: 4490, oldPrice: null, category: "Куртки", rating: 4.8, reviews: 267, badge: null, img: wbImg(146872595) },
+  { id: 169802266, name: "Куртка укороченная весна-лето экозамша", price: 4790, oldPrice: 5500, category: "Куртки", rating: 4.7, reviews: 88, badge: "СКИДКА", img: wbImg(169802266) },
+  { id: 157355675, name: "Платье из экокожи", price: 3990, oldPrice: null, category: "Платья", rating: 4.9, reviews: 445, badge: "ХИТ", img: wbImg(157355675) },
+  { id: 176410221, name: "Платье черное праздничное", price: 4290, oldPrice: 5100, category: "Платья", rating: 4.8, reviews: 198, badge: "СКИДКА", img: wbImg(176410221) },
+  { id: 159331398, name: "Платье замшевое", price: 3790, oldPrice: null, category: "Платья", rating: 4.7, reviews: 134, badge: "НОВИНКА", img: wbImg(159331398) },
+  { id: 157360791, name: "Топ кожаный корсет вечерний", price: 2790, oldPrice: 3400, category: "Топы", rating: 4.9, reviews: 276, badge: "ХИТ", img: wbImg(157360791) },
+  { id: 169798793, name: "Топ замшевый корсет вечерний", price: 2690, oldPrice: null, category: "Топы", rating: 4.8, reviews: 159, badge: null, img: wbImg(169798793) },
+  { id: 176270645, name: "Рубашка экокожа", price: 3290, oldPrice: 3990, category: "Рубашки", rating: 4.7, reviews: 92, badge: "СКИДКА", img: wbImg(176270645) },
+  { id: 182663968, name: "Палаццо с карманами из экокожи", price: 3490, oldPrice: null, category: "Брюки", rating: 4.8, reviews: 203, badge: "НОВИНКА", img: wbImg(182663968) },
+  { id: 177093220, name: "Брюки, леггинсы, лосины", price: 2290, oldPrice: 2890, category: "Брюки", rating: 4.6, reviews: 317, badge: "СКИДКА", img: wbImg(177093220) },
+  { id: 800876731, name: "Комбинезон из экокожи", price: 5490, oldPrice: null, category: "Комбинезоны", rating: 4.9, reviews: 61, badge: "НОВИНКА", img: wbImg(800876731) },
 ];
 
 const reviews = [
-  { name: "Анна К.", text: "Заказала наушники — пришли быстро, упаковка супер! Качество отличное, рекомендую всем.", rating: 5, date: "15 фев" },
-  { name: "Михаил Р.", text: "Браслет работает отлично, всё как описано. Доставка за 3 дня, буду заказывать ещё.", rating: 5, date: "10 фев" },
-  { name: "Светлана Т.", text: "LED лента просто огонь! Красиво подсвечивает комнату, управление удобное.", rating: 4, date: "7 фев" },
-  { name: "Дмитрий В.", text: "Держатель для телефона — мегаудобная вещь. Держит крепко, не падает.", rating: 5, date: "3 фев" },
+  { name: "Екатерина М.", text: "Куртка из экокожи — просто восторг! Качество на уровне брендовых вещей, а цена очень приятная. Уже второй раз заказываю.", rating: 5, date: "20 фев" },
+  { name: "Ольга С.", text: "Юбка мини кожаная — шикарная! Сидит идеально, материал плотный, не мнётся. Доставка быстрая, упаковка аккуратная.", rating: 5, date: "14 фев" },
+  { name: "Алина Р.", text: "Платье из экокожи заказала на корпоратив — все спрашивали где купила. Очень стильно и удобно.", rating: 5, date: "8 фев" },
+  { name: "Наташа В.", text: "Топ-корсет вечерний — огонь! Очень красивый, хорошо держит форму. Рекомендую всем девочкам.", rating: 4, date: "3 фев" },
 ];
 
 type CartItem = { id: number; name: string; price: number; qty: number };
@@ -130,7 +145,7 @@ export default function Index() {
               <span className="text-white block">ДЕНЬ</span>
             </h1>
             <p className="text-white/60 text-lg max-w-md leading-relaxed">
-              Топовые гаджеты и аксессуары по лучшим ценам. Только оригинальные товары с гарантией.
+              Одежда из экокожи и замши — стильно, доступно, с доставкой по всей России.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
@@ -323,10 +338,10 @@ export default function Index() {
                 <div className="font-display text-xs tracking-[0.3em] text-[#FF2D78] uppercase mb-4">— Наша история —</div>
                 <h2 className="font-display text-4xl md:text-5xl font-black text-white mb-6">О МАГАЗИНЕ</h2>
                 <p className="text-white/60 leading-relaxed text-lg mb-4">
-                  Мы — команда энтузиастов, которые любят крутые гаджеты и хотят сделать их доступными каждому.
+                  Мы создаём стильную одежду из экокожи и замши — для тех, кто хочет выглядеть дорого без переплаты за бренд.
                 </p>
                 <p className="text-white/50 leading-relaxed">
-                  С 2021 года работаем на Wildberries и радуем тысячи покупателей по всей России. Сейчас открыли собственный магазин, чтобы предложить ещё лучшие цены напрямую.
+                  Работаем на Wildberries с 2021 года, более 5000 довольных покупательниц по всей России. Теперь открыли собственный магазин с ценами напрямую от производителя.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
